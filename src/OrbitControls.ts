@@ -8,8 +8,11 @@
  * @author WestLangley / http://github.com/WestLangley
  * @author erich666 / http://erichaines.com
  * @author ScieCode / http://github.com/sciecode
+ * @author foufrix / http://github.com/foufrix
  */
 
+import { Platform } from 'react-native';
+import { getNode } from 'react-native-web-hooks';
 import {
   EventDispatcher,
   MOUSE,
@@ -21,8 +24,6 @@ import {
   Vector3,
   Camera,
 } from 'three';
-import { Platform } from 'react-native';
-import { getNode } from 'react-native-web-hooks';
 // This set of controls performs orbiting, dollying (zooming), and panning.
 // Unlike TrackballControls, it maintains the "up" direction object.up (+Y by default).
 //
@@ -124,6 +125,8 @@ export class OrbitControls extends EventDispatcher {
   // internals
   //
 
+  //TODO: check for better type than any
+  private dispatchEvent: any;
   private changeEvent = { type: 'change' };
   private startEvent = { type: 'start' };
   private endEvent = { type: 'end' };
