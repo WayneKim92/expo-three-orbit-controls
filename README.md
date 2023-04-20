@@ -46,3 +46,9 @@ const Test = () => {
 
 
 Check out the [example](./example/App.tsx) for more info.
+
+## Roadmap
+
+- [ ] Zoom
+- [ ] Move around
+- [X] Move scene 
