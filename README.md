@@ -23,6 +23,7 @@ Import into your project:
 
 ```tsx
 import { useState } from 'react';
+import { Canvas } from '@react-three/fiber/native';
 import OrbitControlsView from 'expo-three-orbit-controls';
 import { Camera } from 'three';
 
