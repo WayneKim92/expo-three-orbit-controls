@@ -13,9 +13,13 @@ This is a very rough port of [Three.js `OrbitControls`](https://threejs.org/docs
 
 ## ☁️ Installation
 
-```sh
-yarn add expo-three-orbit-controls
+Add this line to your `package.json` dependencies
+
+```json
+"expo-three-orbitcontrols": "https://github.com/foufrix/expo-three-orbit-controls",
 ```
+
+Then run `yarn` or `npm install` depending of your package manager.
 
 ## 🚀 Usage
 
@@ -24,7 +28,7 @@ Import into your project:
 ```tsx
 import { useState } from 'react';
 import { Canvas } from '@react-three/fiber/native';
-import OrbitControlsView from 'expo-three-orbit-controls';
+import OrbitControlsView from 'expo-three-orbitcontrols';
 import { Camera } from 'three';
 
 
