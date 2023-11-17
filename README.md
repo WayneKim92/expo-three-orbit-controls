@@ -28,7 +28,7 @@ Import into your project:
 ```tsx
 import { useState } from 'react';
 import { Canvas } from '@react-three/fiber/native';
-import OrbitControlsView from 'expo-three-orbitcontrols';
+import OrbitControls from 'expo-three-orbitcontrols';
 import { Camera } from 'three';
 
 
@@ -36,9 +36,9 @@ const Test = () => {
     const [camera, setCamera] = useState<Camera | null>(null);    
     return(
       <View style={{ flex: 1 }}>
-        <OrbitControlsView style={{ flex: 1 }} camera={camera}>
+        <OrbitControls style={{ flex: 1 }} camera={camera}>
           <Canvas onCreated={({ camera }) => setCamera(camera)}></Canvas>
-        </OrbitControlsView>
+        </OrbitControls>
      </View>
     )
 }

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { View, Platform, ViewProps, PanResponder } from 'react-native';
 import { Camera } from 'three';
 
-import { OrbitControls } from './OrbitControls';
+import { OrbitControls as RNOrbitControls } from './OrbitControls';
 
 export type OrbitControlsViewProps = { camera: null | Camera } & ViewProps;
 
@@ -28,9 +28,9 @@ const OrbitControlsView = React.forwardRef(
 
     const viewRef = React.useRef(null);
 
-    const controls: OrbitControls | null = React.useMemo(() => {
+    const controls: RNOrbitControls | null = React.useMemo(() => {
       if (camera && viewRef?.current) {
-        return new OrbitControls(camera as any, viewRef.current);
+        return new RNOrbitControls(camera as any, viewRef.current);
       }
       return null;
     }, [camera, viewRef?.current]);
@@ -38,7 +38,7 @@ const OrbitControlsView = React.forwardRef(
     React.useImperativeHandle(
       ref,
       () => ({
-        getControls(): OrbitControls | null {
+        getControls(): RNOrbitControls | null {
           return controls;
         },
       }),
@@ -106,4 +106,8 @@ const OrbitControlsView = React.forwardRef(
   }
 );
 
-export default OrbitControlsView;
+function OrbitControls(props: OrbitControlsViewProps) {
+  return <OrbitControlsView {...props} />;
+}
+
+export default OrbitControls;
