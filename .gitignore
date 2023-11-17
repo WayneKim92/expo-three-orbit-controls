@@ -3,3 +3,5 @@ secret/
 /.expo
 yarn-error.log
 build/
+# JetBrains
+.idea
